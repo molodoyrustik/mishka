@@ -1,0 +1,31 @@
+@mixin ptSans($typeArial: regular) {
+  @if $typeArial == regular {
+    font-family: 'PT Sans Narrow';
+  } @else if $typeArial == bold {
+    font-family: 'PT Sans Narrow Bold';
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    @content;
+  }
+}
+
+@mixin retina3 {
+  @media (min-resolution: 3dppx) {
+    @content;
+  }
+}
