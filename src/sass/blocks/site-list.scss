@@ -2,113 +2,74 @@
   font-weight: bold;
 
   @include tablet {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 570px;
+    display: none;
   }
 
   @include desktop {
-    width: 780px;
+    display: flex;
   }
 }
 
 .site-list__item {
+  border-top: 1px solid #ececec;
+
+  &:first-child {
+    border-top: none;
+  }
+
   @include tablet {
-    margin-right: 32px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &--active {
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: -3px;
-        left: 0;
-        height: 3px;
-        background: #826550;
-      }
+    border-top: none;
+    margin-left: 35px;
+    &:first-child {
+      margin-left: 0;
     }
   }
 
   @include desktop {
-    margin-right: 0;
-    
-    &--active::after {
-      right: 30px;
-      left: 30px;
+    margin: 0;
+    padding-left: 35px;
+    padding-right: 35px;
+    border: none;
+    border-left: 1px solid #ececec;
+    &:first-child {
+      margin: 0;
+      padding-left: 0;
+      border: none;
     }
   }
 }
 
 .site-list__link {
   display: block;
-  padding: 12px 21px;
-  padding-bottom: 13px;
-
-  font-size: 18px;
+  width: 240px;
+  margin: 0 auto;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  padding-left: 75px;
+  font-size: 17px;
   line-height: 24px;
-  color: #ffffff;
-  text-transform: uppercase;
+  text-align: left;
+  color: #000000;
   text-decoration: none;
-  background-color: #826550;
-  border-top: 1px solid #886e5d;
-  border-bottom: 1px solid #71543f;
+  background-color: #ffffff;
+  cursor: pointer;
 
-  &[href] {
-    &:hover {
-      background-color: #755a46;
-      border-top-color: #755a46;
-    }
-    &:active {
-      color: rgba(255, 255, 255, 0.3);
-      background-color: #6a4d38;
-      border-top-color: #6a4d38;
-    }
+  &:hover {
+    opacity: 0.6;
+  }
+  &:active {
+    opacity: 0.3;
   }
 
   @include tablet {
+    width: auto;
+    margin: 0;
     padding: 0;
-    padding-top: 25px;
-    padding-bottom: 23px;
-
-    background: none;
-    border: none;
-
-    &[href] {
-      &:hover {
-        color: #826550;
-        background-color: #000000;
-      }
-      &:active {
-        color: #ffffff;
-        background-color: #000000;
-        opacity: 0.3;
-      }
-    }
+    background-color: transparent;
   }
 
   @include desktop {
-    padding-right: 31px;
-    padding-left: 31px;
-
-    &[href] {
-      &:hover {
-        color: #000000;
-        background-color: #ffffff;
-      }
-      &:active {
-        color: rgba(0, 0, 0, 0.3);
-        background-color: #ffffff;
-        opacity: 1;
-      }
-    }
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
-  
-
 }
