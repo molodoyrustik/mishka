@@ -6,7 +6,7 @@ module.exports = function() {
         presets: ['@babel/env']
       }))
       .pipe($.gulp.dest($.config.root + '/js'))
-      .pipe($.gp.rename('main.js'))
+      .pipe($.gp.rename('main.min.js'))
       .pipe($.gp.uglify())
       .pipe($.gulp.dest($.config.root + '/js'))
   })

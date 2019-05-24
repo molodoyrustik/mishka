@@ -5,7 +5,8 @@ global.$ = {
     task: require('./gulp/paths/tasks.js'),
     jsFoundation: require('./gulp/paths/js.foundation.js'),
     cssFoundation: require('./gulp/paths/css.foundation.js'),
-    app: require('./gulp/paths/app.js')
+    app: require('./gulp/paths/app.js'),
+    sass: require('./gulp/paths/sass.js')
   },
   gulp: require('gulp'),
   del: require('del'),
@@ -19,27 +20,32 @@ $.path.task.forEach(function(taskPath) {
 
 $.gulp.task('build', $.gulp.series(
   'clean',
+  'sprite.svg',
   $.gulp.parallel(
     'sass-prod',
-    'pug',
+    'css.foundation',
+    'pug.prod',
     'js.foundation',
     'js-prod',
+    'imagemin',
     'copy.image',
-    'fonts',
-    'css.foundation'
-  )
+    'webp',
+    'fonts'
+  ),
 ));
 
 $.gulp.task('default', $.gulp.series(
   'clean',
+  'sprite.svg',
   $.gulp.parallel(
     'sass',
+    'css.foundation',
     'pug',
     'js.foundation',
     'js.process',
     'copy.image',
-    'fonts',
-    'css.foundation'
+    'webp',
+    'fonts'
   ),
   $.gulp.parallel(
     'watch',

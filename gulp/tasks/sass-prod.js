@@ -1,6 +1,6 @@
 module.exports = function() {
   $.gulp.task('sass-prod', function() {
-    return $.gulp.src('./src/sass/main.scss')
+    return $.gulp.src($.path.sass)
     .pipe($.gp.sass())
     .on('error', $.gp.notify.onError({
       title: 'Style'
@@ -8,8 +8,9 @@ module.exports = function() {
     .pipe($.gp.autoprefixer({
       browsers: $.config.autoprefixerConfig
     }))
-    .pipe($.gp.cleanCss({compatibility: 'ie8'}))
     .pipe($.gulp.dest($.config.root + '/css'))
-    .pipe($.browserSync.stream())
+    .pipe($.gp.csso())
+    .pipe($.gp.rename('main.min.css'))
+    .pipe($.gulp.dest($.config.root + '/css'))
   });
 };

@@ -13,7 +13,10 @@ head
 
 	// FAVICON
 	link(rel='icon', type='image/png', sizes='192x192', href='/images/favicon/android-icon-192x192.png')
-	link(href='css/foundation.css' rel="stylesheet" type="text/css")
-	link(href='css/main.css' rel="stylesheet" type="text/css")
-	link(href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=cyrillic,cyrillic-ext,latin-ext', rel='stylesheet')
+	link(rel='preload', href='/fonts/opensans.woff', as='font', type='font/woff' crossorigin='')
+	link(rel='preload', href='/fonts/opensans.woff2', as='font', type='font/woff2' crossorigin='')
+	link(rel='preload', href='/fonts/opensansbold.woff', as='font', type='font/woff' crossorigin='')
+	link(rel='preload', href='/fonts/opensansbold.woff2', as='font', type='font/woff2' crossorigin='')
+	link(href='/css/foundation.css' rel="stylesheet" type="text/css")
+	link(href='/css/main.css' rel="stylesheet" type="text/css")
 

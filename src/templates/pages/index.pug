@@ -96,6 +96,10 @@ block content
                   td.product__value 15 см
             .product__wrapper-image
               picture
+                source(type='image/webp', media='(min-width: 1250px)', srcset='/images/desktop/product.webp 1x,/images/desktop/product@2x.webp 2x')
+                source(type='image/webp', media='(min-width: 768px)', srcset='/images/ipad/product.webp 1x, /images/ipad/product@2x.webp 2x')
+                source(type='image/webp', srcset='/images/iphone/product.webp 1x, /images/iphone/product.webp 2x')
+
                 source(media="(min-width: 1250px)" srcset="/images/desktop/product.jpg 1x, /images/desktop/product@2x.jpg 2x")
                 source(media="(min-width: 768px)" srcset="/images/ipad/product.jpg 1x, /images/ipad/product@2x.jpg 2x")
                 img(src="/images/iphone/product.jpg" srcset='/images/iphone/product@2x.jpg 2x').product__image
@@ -163,6 +167,6 @@ block content
             li.contacts__item
               span.contacts__key адрес:
               span.contacts__value.contacts__value--adress г. Санкт-Петербург, ул. Большая Конюшенная,  д. 19/8, офис 101
-        .contacts__map
-          iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xfbeb3cbd3eed50c8!2sBolshaya+Konyushennaya+ul.%2C+19%2C+101%2C+Sankt-Peterburg%2C+191186!5e0!3m2!1sen!2sru!4v1506859806364', style='border:0', allowfullscreen='')
+        //- .contacts__map
+        //-   iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xfbeb3cbd3eed50c8!2sBolshaya+Konyushennaya+ul.%2C+19%2C+101%2C+Sankt-Peterburg%2C+191186!5e0!3m2!1sen!2sru!4v1506859806364', style='border:0', allowfullscreen='')
         buttom.button.contacts__button Напишите нам
